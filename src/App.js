@@ -1,10 +1,11 @@
 import React from 'react';
 import { CardList } from './components/card-list/card-list.component';
 import { SearchBox } from './components/search-box/search-box.component';
+import Scroll from './components/scroll/scroll.component';
 import './App.css';
 
 class App extends React.Component {
-  constructor() {
+constructor() {
     super();
     this.state = {
       monsters: [],
@@ -35,7 +36,9 @@ class App extends React.Component {
           placeholder='search monsters'
           handleChange={this.handleChange}
         />
-        <CardList monsters={filteredMonsters} />
+        <Scroll>
+          <CardList monsters={filteredMonsters} />
+        </Scroll>
       </div>
     );
   }
